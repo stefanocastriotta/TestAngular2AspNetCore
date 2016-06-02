@@ -29,9 +29,10 @@ AppComponent = __decorate([
     }),
     router_deprecated_1.RouteConfig([
         {
-            path: '/ElencoCCA',
+            path: '/LoveBoat/ElencoCCA',
             name: 'CCA',
-            component: cca_list_component_1.CCAListComponent
+            component: cca_list_component_1.CCAListComponent,
+            useAsDefault: true
         }
     ]), 
     __metadata('design:paramtypes', [])

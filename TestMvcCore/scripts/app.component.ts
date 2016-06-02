@@ -14,9 +14,10 @@ import { CCAListComponent } from './cca-list.component';
 })
 @RouteConfig([
     {
-        path: '/ElencoCCA',
+        path: '/LoveBoat/ElencoCCA',
         name: 'CCA',
-        component: CCAListComponent
+        component: CCAListComponent,
+        useAsDefault: true
     }
 ])
 export class AppComponent {
