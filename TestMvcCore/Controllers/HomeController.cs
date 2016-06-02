@@ -32,6 +32,21 @@ namespace TestMvcCore.Controllers
             return View();
         }
 
+        public IActionResult Elenco()
+        {
+            return View();
+        }
+
+        public IActionResult CCA()
+        {
+            return View();
+        }
+
+        public IActionResult CCADetail()
+        {
+            return View();
+        }
+
         public IActionResult Error()
         {
             return View();

@@ -9,19 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
-const componente_1 = require('./componente');
-let DettaglioComponente = class DettaglioComponente {
+const cca_component_1 = require('./cca.component');
+const cca_service_1 = require('./cca.service');
+let CCAListComponent = class CCAListComponent {
+    constructor(ccaService) {
+        this.ccaService = ccaService;
+        this.Componenti = [];
+    }
+    ngOnInit() {
+        this.ccaService.getComponenti().then((data) => data.forEach(c => this.Componenti.push(c)));
+    }
+    salvaComponenti() {
+        debugger;
+    }
 };
-__decorate([
-    core_1.Input(), 
-    __metadata('design:type', componente_1.Componente)
-], DettaglioComponente.prototype, "componente", void 0);
-DettaglioComponente = __decorate([
+CCAListComponent = __decorate([
     core_1.Component({
-        selector: 'dettaglio-componente',
-        templateUrl: '/Home/CCADetail'
+        selector: 'cca-list',
+        templateUrl: '/Home/CCA',
+        directives: [cca_component_1.DettaglioComponente]
     }), 
-    __metadata('design:paramtypes', [])
-], DettaglioComponente);
-exports.DettaglioComponente = DettaglioComponente;
-//# sourceMappingURL=cca.component.js.map
+    __metadata('design:paramtypes', [cca_service_1.CCAService])
+], CCAListComponent);
+exports.CCAListComponent = CCAListComponent;
+//# sourceMappingURL=cca-list.component.js.map

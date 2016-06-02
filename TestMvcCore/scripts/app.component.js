@@ -9,41 +9,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
-const cca_component_1 = require('./cca.component');
+const router_deprecated_1 = require('@angular/router-deprecated');
 const cca_service_1 = require('./cca.service');
+const cca_list_component_1 = require('./cca-list.component');
 let AppComponent = class AppComponent {
-    constructor(ccaService) {
-        this.ccaService = ccaService;
-        this.Componenti = [];
-    }
-    ngOnInit() {
-        this.ccaService.getComponenti().then((data) => data.forEach(c => this.Componenti.push(c)));
-    }
-    salvaComponenti() {
-        debugger;
+    constructor() {
+        this.title = 'Gestione componenti';
     }
 };
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: `<h1>CCA</h1>
-<form>
-    <div class="row">
-        <div class="col-sm-4" *ngFor="let componente of Componenti">
-            <dettaglio-componente [componente]="componente"></dettaglio-componente>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <button type="button" class="btn btn-primary" (click)="salvaComponenti()">Salva</button>
-        </div>
-    </div>
-</form>
-`,
-        directives: [cca_component_1.DettaglioComponente],
-        providers: [cca_service_1.CCAService]
-    }), 
-    __metadata('design:paramtypes', [cca_service_1.CCAService])
+        templateUrl: '/Home/Elenco',
+        directives: [router_deprecated_1.ROUTER_DIRECTIVES],
+        providers: [
+            router_deprecated_1.ROUTER_PROVIDERS,
+            cca_service_1.CCAService
+        ]
+    }),
+    router_deprecated_1.RouteConfig([
+        {
+            path: '/ElencoCCA',
+            name: 'CCA',
+            component: cca_list_component_1.CCAListComponent
+        }
+    ]), 
+    __metadata('design:paramtypes', [])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map
