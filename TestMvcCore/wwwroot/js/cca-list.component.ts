@@ -6,7 +6,7 @@ import { OnInit } from '@angular/core';
 
 @Component({
     selector: 'cca-list',
-    templateUrl: '/Home/CCA',
+    templateUrl: 'Home/CCA',
     directives: [DettaglioComponente]
 })
 export class CCAListComponent implements OnInit {

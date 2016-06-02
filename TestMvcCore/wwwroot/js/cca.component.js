@@ -19,7 +19,7 @@ __decorate([
 DettaglioComponente = __decorate([
     core_1.Component({
         selector: 'dettaglio-componente',
-        templateUrl: '/Home/CCADetail'
+        templateUrl: 'Home/CCADetail'
     }), 
     __metadata('design:paramtypes', [])
 ], DettaglioComponente);

@@ -5,7 +5,7 @@ import { CCAListComponent } from './cca-list.component';
 
 @Component({
     selector: 'my-app',
-    templateUrl: '/Home/Elenco',
+    templateUrl: 'Home/Elenco',
     directives: [ROUTER_DIRECTIVES],
     providers: [
         ROUTER_PROVIDERS,

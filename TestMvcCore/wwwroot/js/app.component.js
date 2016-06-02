@@ -20,7 +20,7 @@ let AppComponent = class AppComponent {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        templateUrl: '/Home/Elenco',
+        templateUrl: 'Home/Elenco',
         directives: [router_deprecated_1.ROUTER_DIRECTIVES],
         providers: [
             router_deprecated_1.ROUTER_PROVIDERS,

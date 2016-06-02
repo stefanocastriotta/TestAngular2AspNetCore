@@ -26,7 +26,7 @@ let CCAListComponent = class CCAListComponent {
 CCAListComponent = __decorate([
     core_1.Component({
         selector: 'cca-list',
-        templateUrl: '/Home/CCA',
+        templateUrl: 'Home/CCA',
         directives: [cca_component_1.DettaglioComponente]
     }), 
     __metadata('design:paramtypes', [cca_service_1.CCAService])
