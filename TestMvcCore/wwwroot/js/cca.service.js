@@ -9,21 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
+const http_1 = require('@angular/http');
+require('rxjs/add/operator/toPromise');
 let CCAService = class CCAService {
+    constructor(http) {
+        this.http = http;
+    }
     getComponenti() {
-        return Promise.resolve([
-            { Anno: 2016, Mese: 1, Fascia: "F0", Valore: 2.5, IDFascia: 0 },
-            { Anno: 2016, Mese: 1, Fascia: "F1", Valore: 7.41, IDFascia: 1 },
-            { Anno: 2016, Mese: 1, Fascia: "F2", Valore: 3.68, IDFascia: 2 },
-            { Anno: 2016, Mese: 2, Fascia: "F0", Valore: 9.11, IDFascia: 0 },
-            { Anno: 2016, Mese: 2, Fascia: "F1", Valore: 1.06, IDFascia: 1 },
-            { Anno: 2016, Mese: 2, Fascia: "F2", Valore: 5.12, IDFascia: 2 }
-        ]);
+        return this.http.get('api/Values/GetComponenti')
+            .toPromise()
+            .then(response => {
+            return response.json();
+        })
+            .catch(this.handleError);
+    }
+    handleError(error) {
+        console.error('An error occurred', error);
+        return Promise.reject(error.message || error);
     }
 };
 CCAService = __decorate([
     core_1.Injectable(), 
-    __metadata('design:paramtypes', [])
+    __metadata('design:paramtypes', [http_1.Http])
 ], CCAService);
 exports.CCAService = CCAService;
 //# sourceMappingURL=cca.service.js.map

@@ -1,16 +1,25 @@
 ﻿import { Injectable } from '@angular/core';
+import { Headers, Http } from '@angular/http';
 import { Componente } from './componente';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class CCAService {
-    getComponenti() {
-        return Promise.resolve([
-            <Componente>{ Anno: 2016, Mese: 1, Fascia: "F0", Valore: 2.5, IDFascia: 0 },
-            <Componente>{ Anno: 2016, Mese: 1, Fascia: "F1", Valore: 7.41, IDFascia: 1 },
-            <Componente>{ Anno: 2016, Mese: 1, Fascia: "F2", Valore: 3.68, IDFascia: 2 },
-            <Componente>{ Anno: 2016, Mese: 2, Fascia: "F0", Valore: 9.11, IDFascia: 0 },
-            <Componente>{ Anno: 2016, Mese: 2, Fascia: "F1", Valore: 1.06, IDFascia: 1 },
-            <Componente>{ Anno: 2016, Mese: 2, Fascia: "F2", Valore: 5.12, IDFascia: 2 }
-        ]);
+
+    constructor(private http: Http) { }
+
+    getComponenti(): Promise<Componente[]> {
+        
+        return this.http.get('api/Values/GetComponenti')
+            .toPromise()
+            .then(response => {
+                return response.json();
+            })
+            .catch(this.handleError);
+    }
+
+    private handleError(error: any) {
+        console.error('An error occurred', error);
+        return Promise.reject(error.message || error);
     }
 }

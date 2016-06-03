@@ -17,7 +17,11 @@ let CCAListComponent = class CCAListComponent {
         this.Componenti = [];
     }
     ngOnInit() {
-        this.ccaService.getComponenti().then((data) => data.forEach(c => this.Componenti.push(c)));
+        this.ccaService.getComponenti().then((data) => {
+            data.forEach(c => {
+                this.Componenti.push(c);
+            });
+        });
     }
     salvaComponenti() {
         debugger;

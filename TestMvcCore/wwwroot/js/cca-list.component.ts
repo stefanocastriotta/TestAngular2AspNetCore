@@ -17,7 +17,11 @@ export class CCAListComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.ccaService.getComponenti().then((data) => data.forEach(c => this.Componenti.push(c)));
+        this.ccaService.getComponenti().then((data) => {
+            data.forEach(c => {
+                this.Componenti.push(c);
+            });
+        });
     }
 
     salvaComponenti() {

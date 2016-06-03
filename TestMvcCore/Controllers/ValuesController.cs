@@ -43,5 +43,18 @@ namespace TestMvcCore.Controllers
         public void Delete(int id)
         {
         }
+
+        [HttpGet("GetComponenti")]
+        public IEnumerable<Componente> GetComponenti()
+        {
+            List<Componente> list = new List<Componente>();
+            list.Add(new Componente() { Anno = 2016, Mese = 1, Fascia = "F0", Valore = 2.5m, IDFascia = 0 });
+            list.Add(new Componente() { Anno = 2016, Mese = 1, Fascia = "F1", Valore = 7.41m, IDFascia = 1 });
+            list.Add(new Componente() { Anno = 2016, Mese = 1, Fascia = "F2", Valore = 3.68m, IDFascia = 2 });
+            list.Add(new Componente() { Anno = 2016, Mese = 2, Fascia = "F0", Valore = 9.11m, IDFascia = 0 });
+            list.Add(new Componente() { Anno = 2016, Mese = 2, Fascia = "F1", Valore = 1.06m, IDFascia = 1 });
+            list.Add(new Componente() { Anno = 2016, Mese = 2, Fascia = "F2", Valore = 5.12m, IDFascia = 2 });
+            return list;
+        }
     }
 }
