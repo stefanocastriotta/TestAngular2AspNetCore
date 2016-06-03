@@ -10,7 +10,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IMPORTANTE", "IMPORTANTE", "{0F61479D-0A22-48F8-98C7-741908951F55}"
 	ProjectSection(SolutionItems) = preProject
 		README.txt = README.txt
-		..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\CommonExtensions\Microsoft\TypeScript\typescriptServices.js = ..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\CommonExtensions\Microsoft\TypeScript\typescriptServices.js
 	EndProjectSection
 EndProject
 Global
