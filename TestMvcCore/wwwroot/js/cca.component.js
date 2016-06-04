@@ -8,20 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
-const componente_1 = require('./componente');
-let DettaglioComponente = class DettaglioComponente {
-};
-__decorate([
-    core_1.Input(), 
-    __metadata('design:type', componente_1.Componente)
-], DettaglioComponente.prototype, "componente", void 0);
-DettaglioComponente = __decorate([
-    core_1.Component({
-        selector: 'dettaglio-componente',
-        templateUrl: 'Home/CCADetail'
-    }), 
-    __metadata('design:paramtypes', [])
-], DettaglioComponente);
+var core_1 = require('@angular/core');
+var componente_1 = require('./componente');
+var DettaglioComponente = (function () {
+    function DettaglioComponente() {
+    }
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', componente_1.Componente)
+    ], DettaglioComponente.prototype, "componente", void 0);
+    DettaglioComponente = __decorate([
+        core_1.Component({
+            selector: 'dettaglio-componente',
+            templateUrl: 'Home/CCADetail'
+        }), 
+        __metadata('design:paramtypes', [])
+    ], DettaglioComponente);
+    return DettaglioComponente;
+}());
 exports.DettaglioComponente = DettaglioComponente;
 //# sourceMappingURL=cca.component.js.map

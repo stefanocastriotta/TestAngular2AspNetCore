@@ -8,34 +8,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
-const router_deprecated_1 = require('@angular/router-deprecated');
-const cca_service_1 = require('./cca.service');
-const cca_list_component_1 = require('./cca-list.component');
-let AppComponent = class AppComponent {
-    constructor() {
+var core_1 = require('@angular/core');
+var router_deprecated_1 = require('@angular/router-deprecated');
+var cca_service_1 = require('./cca.service');
+var cca_list_component_1 = require('./cca-list.component');
+var AppComponent = (function () {
+    function AppComponent() {
         this.title = 'Gestione componenti';
     }
-};
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        templateUrl: 'Home/Elenco',
-        directives: [router_deprecated_1.ROUTER_DIRECTIVES],
-        providers: [
-            router_deprecated_1.ROUTER_PROVIDERS,
-            cca_service_1.CCAService
-        ]
-    }),
-    router_deprecated_1.RouteConfig([
-        {
-            path: '/LoveBoat/ElencoCCA',
-            name: 'CCA',
-            component: cca_list_component_1.CCAListComponent,
-            useAsDefault: true
-        }
-    ]), 
-    __metadata('design:paramtypes', [])
-], AppComponent);
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: 'my-app',
+            templateUrl: 'Home/Elenco',
+            directives: [router_deprecated_1.ROUTER_DIRECTIVES],
+            providers: [
+                router_deprecated_1.ROUTER_PROVIDERS,
+                cca_service_1.CCAService
+            ]
+        }),
+        router_deprecated_1.RouteConfig([
+            {
+                path: '/LoveBoat/ElencoCCA',
+                name: 'CCA',
+                component: cca_list_component_1.CCAListComponent,
+                useAsDefault: true
+            }
+        ]), 
+        __metadata('design:paramtypes', [])
+    ], AppComponent);
+    return AppComponent;
+}());
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

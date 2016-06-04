@@ -8,17 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
-const cca_component_1 = require('./cca.component');
-const cca_service_1 = require('./cca.service');
-let CCAListComponent = class CCAListComponent {
-    constructor(ccaService) {
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+var core_1 = require('@angular/core');
+var core_2 = require('@angular/core');
+var cca_component_1 = require('./cca.component');
+var cca_service_1 = require('./cca.service');
+var variables_1 = require('./variables');
+var CCAListComponent = (function () {
+    function CCAListComponent(_baseUrl, ccaService) {
+        this._baseUrl = _baseUrl;
         this.ccaService = ccaService;
         this.Componenti = [];
     }
-    ngOnInit() {
+    CCAListComponent.prototype.ngOnInit = function () {
         $("#jqGrid").jqGrid({
-            url: baseUrl + "/api/values/GetComponenti",
+            url: this._baseUrl + "/api/values/GetComponenti",
             datatype: "json",
             mtype: "GET",
             colModel: [{ name: 'Anno', index: 'Anno', width: 90 },
@@ -31,26 +37,29 @@ let CCAListComponent = class CCAListComponent {
             sortorder: 'desc',
             caption: 'My First Grid'
         });
-    }
-    apriCopiaComponenti() {
-        this.ccaService.getComponenti().then((data) => {
-            data.forEach(c => {
-                this.Componenti.push(c);
+    };
+    CCAListComponent.prototype.apriCopiaComponenti = function () {
+        var _this = this;
+        this.ccaService.getComponenti().then(function (data) {
+            data.forEach(function (c) {
+                _this.Componenti.push(c);
             });
         });
-    }
-    salvaComponenti() {
+    };
+    CCAListComponent.prototype.salvaComponenti = function () {
         debugger;
         this.ccaService.salvaComponenti(this.Componenti);
-    }
-};
-CCAListComponent = __decorate([
-    core_1.Component({
-        selector: 'cca-list',
-        templateUrl: 'Home/CCA',
-        directives: [cca_component_1.DettaglioComponente]
-    }), 
-    __metadata('design:paramtypes', [cca_service_1.CCAService])
-], CCAListComponent);
+    };
+    CCAListComponent = __decorate([
+        core_1.Component({
+            selector: 'cca-list',
+            templateUrl: 'Home/CCA',
+            directives: [cca_component_1.DettaglioComponente]
+        }),
+        __param(0, core_2.Inject(variables_1.BASEURL)), 
+        __metadata('design:paramtypes', [String, cca_service_1.CCAService])
+    ], CCAListComponent);
+    return CCAListComponent;
+}());
 exports.CCAListComponent = CCAListComponent;
 //# sourceMappingURL=cca-list.component.js.map

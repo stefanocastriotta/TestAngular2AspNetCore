@@ -8,38 +8,39 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
-const http_1 = require('@angular/http');
+var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
-let CCAService = class CCAService {
-    constructor(http) {
+var CCAService = (function () {
+    function CCAService(http) {
         this.http = http;
     }
-    getComponenti() {
+    CCAService.prototype.getComponenti = function () {
         return this.http.get('api/Values/GetComponenti')
             .toPromise()
-            .then(response => {
+            .then(function (response) {
             return response.json();
         })
             .catch(this.handleError);
-    }
-    salvaComponenti(componenti) {
-        let headers = new http_1.Headers({
+    };
+    CCAService.prototype.salvaComponenti = function (componenti) {
+        var headers = new http_1.Headers({
             'Content-Type': 'application/json'
         });
         return this.http
             .post('api/Values/SalvaComponenti', JSON.stringify(componenti), { headers: headers })
             .toPromise()
             .catch(this.handleError);
-    }
-    handleError(error) {
+    };
+    CCAService.prototype.handleError = function (error) {
         console.error('An error occurred', error);
         return Promise.reject(error.message || error);
-    }
-};
-CCAService = __decorate([
-    core_1.Injectable(), 
-    __metadata('design:paramtypes', [http_1.Http])
-], CCAService);
+    };
+    CCAService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], CCAService);
+    return CCAService;
+}());
 exports.CCAService = CCAService;
 //# sourceMappingURL=cca.service.js.map

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { Inject } from '@angular/core';
 import { Componente } from './componente';
 import { DettaglioComponente } from './cca.component';
 import { CCAService } from './cca.service';
 import { OnInit } from '@angular/core';
+import { BASEURL } from './variables';
 
 declare var $: any;
-declare var baseUrl: string;
 
 @Component({
     selector: 'cca-list',
@@ -15,13 +16,13 @@ declare var baseUrl: string;
 export class CCAListComponent implements OnInit {
     public Componenti: Componente[];
 
-    constructor(private ccaService: CCAService) {
+    constructor(@Inject(BASEURL) private _baseUrl: string, private ccaService: CCAService) {
         this.Componenti = [];
     }
 
     ngOnInit() {
         $("#jqGrid").jqGrid({
-            url: baseUrl + "/api/values/GetComponenti",
+            url: this._baseUrl + "/api/values/GetComponenti",
             datatype: "json",
             mtype: "GET",
             colModel: [{ name: 'Anno', index: 'Anno', width: 90 },
