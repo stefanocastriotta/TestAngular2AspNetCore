@@ -46,5 +46,6 @@ export class CCAListComponent implements OnInit {
 
     salvaComponenti() {
         debugger;
+        this.ccaService.salvaComponenti(this.Componenti);
     }
 }

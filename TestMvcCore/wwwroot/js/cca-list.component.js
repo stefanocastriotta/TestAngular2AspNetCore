@@ -41,6 +41,7 @@ let CCAListComponent = class CCAListComponent {
     }
     salvaComponenti() {
         debugger;
+        this.ccaService.salvaComponenti(this.Componenti);
     }
 };
 CCAListComponent = __decorate([

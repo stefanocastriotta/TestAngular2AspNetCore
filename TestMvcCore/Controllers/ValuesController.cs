@@ -56,5 +56,11 @@ namespace TestMvcCore.Controllers
             list.Add(new Componente() { Anno = 2016, Mese = 2, Fascia = "F2", Valore = 5.12m, IDFascia = 2 });
             return list;
         }
+
+        [HttpPost, Route("SalvaComponenti")]
+        public void SalvaComponenti([FromBody] IEnumerable<Componente> componenti)
+        {
+        }
+
     }
 }

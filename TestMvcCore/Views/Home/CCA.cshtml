@@ -13,19 +13,23 @@
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#ccaCopy" aria-expanded="false" aria-controls="ccaCopy" (click)="apriCopiaComponenti()">
     Copia
 </button>
-<div class="collapse" id="ccaCopy">
-    <div class="well">
+<div class="row">
+    <div class="col-sm-12">
+        <div class="collapse" id="ccaCopy">
+            <div class="well">
+                <form>
+                    <div class="row">
+                        <div class="col-sm-4" *ngFor="let componente of Componenti">
+                            <dettaglio-componente [componente]="componente"></dettaglio-componente>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button type="button" class="btn btn-primary" (click)="salvaComponenti()">Salva</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <form>
-        <div class="row">
-            <div class="col-sm-4" *ngFor="let componente of Componenti">
-                <dettaglio-componente [componente]="componente"></dettaglio-componente>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <button type="button" class="btn btn-primary" (click)="salvaComponenti()">Salva</button>
-            </div>
-        </div>
-    </form>
 </div>

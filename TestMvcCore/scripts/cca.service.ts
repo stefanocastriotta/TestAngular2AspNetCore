@@ -18,6 +18,17 @@ export class CCAService {
             .catch(this.handleError);
     }
 
+    salvaComponenti(componenti: Componente[]) {
+        let headers = new Headers({
+            'Content-Type': 'application/json'
+        });
+
+        return this.http
+            .post('api/Values/SalvaComponenti', JSON.stringify(componenti), { headers: headers })
+            .toPromise()
+            .catch(this.handleError);
+    }
+
     private handleError(error: any) {
         console.error('An error occurred', error);
         return Promise.reject(error.message || error);
