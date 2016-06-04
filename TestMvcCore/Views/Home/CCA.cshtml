@@ -5,15 +5,27 @@
     Layout = null;
 }
 <h1>CCA</h1>
-<form>
-    <div class="row">
-        <div class="col-sm-4" *ngFor="let componente of Componenti">
-            <dettaglio-componente [componente]="componente"></dettaglio-componente>
-        </div>
+<div class="row">
+    <div class="col-sm-12">
+        <table id="jqGrid"></table>
     </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <button type="button" class="btn btn-primary" (click)="salvaComponenti()">Salva</button>
-        </div>
+</div>
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#ccaCopy" aria-expanded="false" aria-controls="ccaCopy" (click)="apriCopiaComponenti()">
+    Copia
+</button>
+<div class="collapse" id="ccaCopy">
+    <div class="well">
     </div>
-</form>
+    <form>
+        <div class="row">
+            <div class="col-sm-4" *ngFor="let componente of Componenti">
+                <dettaglio-componente [componente]="componente"></dettaglio-componente>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <button type="button" class="btn btn-primary" (click)="salvaComponenti()">Salva</button>
+            </div>
+        </div>
+    </form>
+</div>
